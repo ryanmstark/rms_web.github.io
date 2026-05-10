@@ -34,7 +34,7 @@
       border: 1px solid #000; padding: 4px 8px; font-family: monospace;
       font-size: 0.9rem; width: 160px; height: 36px;
     }
-    input[type="number"] {
+    .entry-table input {
       border: 1px solid #ccc; padding: 4px 6px; font-family: monospace;
       font-size: 1rem; width: 72px; text-align: center;
     }
@@ -85,6 +85,13 @@
       font-weight: bold; font-size: 1.05rem;
     }
 
+    table.score-history td.editable-score { cursor: pointer; }
+    table.score-history td.editable-score:hover:not(:has(input)) { background: rgba(0,0,0,0.04); }
+    .score-edit-input { width: 54px; border: 1px solid #999; padding: 2px 4px; font-family: monospace; font-size: 0.85rem; text-align: center; background: #fff; }
+    .dealer-hist td { font-size: 0.8rem; color: #555; font-style: italic; }
+    .next-player-btn { border: 1px solid #ccc; background: #f0f0f0; color: #555; padding: 2px 8px; font-family: monospace; font-size: 0.9rem; min-height: 36px; margin-left: 4px; cursor: pointer; vertical-align: middle; }
+    .next-player-btn:hover { background: #000; color: #fff; border-color: #000; }
+
     @media (max-width: 480px) { main { padding: 14px; } }
   </style>
 </head>
@@ -103,7 +110,15 @@
   </main>
 
   <script>
-    let state = blankState();
+    const STORAGE_KEY = 'skyjo-state';
+    function saveToStorage() {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+    }
+    function loadFromStorage() {
+      try { const s = localStorage.getItem(STORAGE_KEY); return s ? JSON.parse(s) : null; } catch (e) { return null; }
+    }
+
+    let state = loadFromStorage() || blankState();
     let history = [];
 
     function blankState() {
@@ -135,6 +150,9 @@
     function startGame()    { if (state.players.length >= 2) mutate(() => { state.phase = 'playing'; }); }
     function resetGame()    { snapshot(); state = blankState(); render(); }
     function undo()         { if (history.length) { state = JSON.parse(history.pop()); render(); } }
+    function editScore(roundIdx, playerIdx, value) {
+      mutate(() => { state.rounds[roundIdx].scores[playerIdx] = value; });
+    }
 
     function submitRound(scores) {
       const roundIndex = state.rounds.length;
@@ -154,6 +172,29 @@
     function el(tag, props = {}) { const e = document.createElement(tag); Object.assign(e, props); return e; }
     function makeTh(text) { const t = el('th'); t.textContent = text; return t; }
     function makeTd(text) { const t = el('td'); t.textContent = text; return t; }
+    function makeScoreTd(value, roundIdx, playerIdx) {
+      const td = el('td', { className: 'editable-score' });
+      td.textContent = value;
+      td.onclick = () => {
+        if (td.querySelector('input')) return;
+        td.textContent = '';
+        const inp = el('input', { className: 'score-edit-input' });
+        inp.type = 'text'; inp.value = value;
+        inp.setAttribute('inputmode', 'numeric');
+        const commit = () => {
+          const v = parseInt(inp.value, 10);
+          editScore(roundIdx, playerIdx, isNaN(v) ? value : v);
+        };
+        inp.onblur = commit;
+        inp.onkeydown = e => {
+          if (e.key === 'Enter') inp.blur();
+          if (e.key === 'Escape') { inp.onblur = null; td.textContent = value; }
+        };
+        td.appendChild(inp);
+        inp.focus(); inp.select();
+      };
+      return td;
+    }
 
     // ── Setup ─────────────────────────────────────────────────────────────────
 
@@ -219,7 +260,7 @@
         const tr = el('tr');
         tr.appendChild(el('td', { className: 'entry-name', textContent: name }));
         const inp = el('input');
-        inp.type = 'number'; inp.placeholder = '0';
+        inp.type = 'text'; inp.placeholder = '0';
         inp.setAttribute('inputmode', 'numeric');
         const td = el('td'); td.appendChild(inp); tr.appendChild(td);
         tbody.appendChild(tr);
@@ -231,6 +272,18 @@
 
       const submitRow = el('div', { className: 'submit-row' });
       const btn = el('button', { className: 'primary', textContent: 'Submit Round' });
+      inputs.forEach((inp, i) => {
+        inp.setAttribute('enterkeyhint', 'next');
+        const advance = () => {
+          if (i + 1 < inputs.length) { inputs[i + 1].focus(); inputs[i + 1].select(); }
+          else btn.focus();
+        };
+        const nextBtn = el('button', { className: 'next-player-btn', textContent: '→' });
+        nextBtn.type = 'button';
+        nextBtn.onclick = advance;
+        inp.parentElement.appendChild(nextBtn);
+        inp.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); advance(); } };
+      });
       btn.onclick = () => submitRound(inputs.map(inp => {
         const v = parseInt(inp.value, 10);
         return isNaN(v) ? 0 : v;
@@ -260,10 +313,16 @@
       const tbody = el('tbody');
       const tots = runningTotals();
 
+      const dealerTr = el('tr', { className: 'dealer-hist' });
+      dealerTr.appendChild(el('td', { className: 'player-name', textContent: 'Dealer' }));
+      state.rounds.forEach(r => dealerTr.appendChild(makeTd(state.players[r.dealerIndex])));
+      dealerTr.appendChild(makeTd(''));
+      tbody.appendChild(dealerTr);
+
       state.players.forEach((name, pi) => {
         const tr = el('tr');
         tr.appendChild(el('td', { className: 'player-name', textContent: name }));
-        state.rounds.forEach(r => tr.appendChild(makeTd(r.scores[pi])));
+        state.rounds.forEach((r, ri) => tr.appendChild(makeScoreTd(r.scores[pi], ri, pi)));
         const totTd = el('td', { className: 'player-total', textContent: tots[pi] });
         if (tots[pi] >= 100) totTd.classList.add('over-limit');
         tr.appendChild(totTd);
@@ -307,6 +366,7 @@
       else if (state.phase === 'playing') app.appendChild(renderPlaying());
       else                                app.appendChild(renderComplete());
       document.getElementById('btn-undo').disabled = history.length === 0;
+      saveToStorage();
     }
 
     document.getElementById('btn-new').onclick = resetGame;
