@@ -15,7 +15,18 @@
       min-height: 100vh;
     }
 
-    h1 { font-size: 1.4rem; margin-bottom: 24px; }
+    h1 { font-size: 1.4rem; margin-bottom: 28px; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #777;
+      margin-bottom: 12px;
+    }
+
+    .section { margin-bottom: 36px; }
 
     .grid {
       display: grid;
@@ -60,165 +71,176 @@
 <body>
   <h1>Sandbox Apps</h1>
 
-  <div class="grid">
+  <div class="section">
+    <div class="section-label">Games</div>
+    <div class="grid">
 
-    <!-- Five Crowns: deep purple + gold -->
-    <a class="app-card" href="/five-crowns/" style="--game-color:#4a1878">
-      <div class="art">
-        <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect width="300" height="130" fill="#4a1878"/>
-          <text x="12"  y="96"  font-size="82" fill="#f4c430" opacity="0.55" font-family="Georgia,serif">♛</text>
-          <text x="102" y="75"  font-size="56" fill="#f4c430" opacity="0.40" font-family="Georgia,serif">♠</text>
-          <text x="160" y="102" font-size="64" fill="#f4c430" opacity="0.50" font-family="Georgia,serif">♥</text>
-          <text x="221" y="72"  font-size="50" fill="#f4c430" opacity="0.40" font-family="Georgia,serif">♦</text>
-          <text x="261" y="112" font-size="42" fill="#f4c430" opacity="0.45" font-family="Georgia,serif">♣</text>
-        </svg>
-      </div>
-      <div class="card-info">
-        <h2>Five Crowns</h2>
-        <p>11 rounds with rotating wild cards. Lowest score wins.</p>
-      </div>
-      <div class="card-link">Open →</div>
-    </a>
+      <!-- Five Crowns: deep purple + gold -->
+      <a class="app-card" href="/five-crowns/" style="--game-color:#4a1878">
+        <div class="art">
+          <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="300" height="130" fill="#4a1878"/>
+            <text x="12"  y="96"  font-size="82" fill="#f4c430" opacity="0.55" font-family="Georgia,serif">♛</text>
+            <text x="102" y="75"  font-size="56" fill="#f4c430" opacity="0.40" font-family="Georgia,serif">♠</text>
+            <text x="160" y="102" font-size="64" fill="#f4c430" opacity="0.50" font-family="Georgia,serif">♥</text>
+            <text x="221" y="72"  font-size="50" fill="#f4c430" opacity="0.40" font-family="Georgia,serif">♦</text>
+            <text x="261" y="112" font-size="42" fill="#f4c430" opacity="0.45" font-family="Georgia,serif">♣</text>
+          </svg>
+        </div>
+        <div class="card-info">
+          <h2>Five Crowns</h2>
+          <p>11 rounds with rotating wild cards. Lowest score wins.</p>
+        </div>
+        <div class="card-link">Open →</div>
+      </a>
 
-    <!-- Phase 10: bold blue -->
-    <a class="app-card" href="/phase-10/" style="--game-color:#1565c0">
-      <div class="art">
-        <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect width="300" height="130" fill="#1565c0"/>
-          <g fill="rgba(255,255,255,0.15)" stroke="#fff" stroke-width="1.5" opacity="0.6">
-            <rect x="38"  y="22" width="40" height="28" rx="3"/>
-            <rect x="84"  y="22" width="40" height="28" rx="3"/>
-            <rect x="130" y="22" width="40" height="28" rx="3"/>
-            <rect x="176" y="22" width="40" height="28" rx="3"/>
-            <rect x="222" y="22" width="40" height="28" rx="3"/>
-            <rect x="38"  y="78" width="40" height="28" rx="3"/>
-            <rect x="84"  y="78" width="40" height="28" rx="3"/>
-            <rect x="130" y="78" width="40" height="28" rx="3"/>
-            <rect x="176" y="78" width="40" height="28" rx="3"/>
-            <rect x="222" y="78" width="40" height="28" rx="3"/>
-          </g>
-          <g text-anchor="middle" font-family="monospace" font-size="13" fill="#fff" opacity="0.85">
-            <text x="58"  y="40">1</text>
-            <text x="104" y="40">2</text>
-            <text x="150" y="40">3</text>
-            <text x="196" y="40">4</text>
-            <text x="242" y="40">5</text>
-            <text x="58"  y="96">6</text>
-            <text x="104" y="96">7</text>
-            <text x="150" y="96">8</text>
-            <text x="196" y="96">9</text>
-            <text x="242" y="96">10</text>
-          </g>
-        </svg>
-      </div>
-      <div class="card-info">
-        <h2>Phase 10</h2>
-        <p>Complete all 10 phases in order. First to finish wins; lowest score breaks ties.</p>
-      </div>
-      <div class="card-link">Open →</div>
-    </a>
+      <!-- Phase 10: bold blue -->
+      <a class="app-card" href="/phase-10/" style="--game-color:#1565c0">
+        <div class="art">
+          <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="300" height="130" fill="#1565c0"/>
+            <g fill="rgba(255,255,255,0.15)" stroke="#fff" stroke-width="1.5" opacity="0.6">
+              <rect x="38"  y="22" width="40" height="28" rx="3"/>
+              <rect x="84"  y="22" width="40" height="28" rx="3"/>
+              <rect x="130" y="22" width="40" height="28" rx="3"/>
+              <rect x="176" y="22" width="40" height="28" rx="3"/>
+              <rect x="222" y="22" width="40" height="28" rx="3"/>
+              <rect x="38"  y="78" width="40" height="28" rx="3"/>
+              <rect x="84"  y="78" width="40" height="28" rx="3"/>
+              <rect x="130" y="78" width="40" height="28" rx="3"/>
+              <rect x="176" y="78" width="40" height="28" rx="3"/>
+              <rect x="222" y="78" width="40" height="28" rx="3"/>
+            </g>
+            <g text-anchor="middle" font-family="monospace" font-size="13" fill="#fff" opacity="0.85">
+              <text x="58"  y="40">1</text>
+              <text x="104" y="40">2</text>
+              <text x="150" y="40">3</text>
+              <text x="196" y="40">4</text>
+              <text x="242" y="40">5</text>
+              <text x="58"  y="96">6</text>
+              <text x="104" y="96">7</text>
+              <text x="150" y="96">8</text>
+              <text x="196" y="96">9</text>
+              <text x="242" y="96">10</text>
+            </g>
+          </svg>
+        </div>
+        <div class="card-info">
+          <h2>Phase 10</h2>
+          <p>Complete all 10 phases in order. First to finish wins; lowest score breaks ties.</p>
+        </div>
+        <div class="card-link">Open →</div>
+      </a>
 
-    <!-- Skyjo: sky blue -->
-    <a class="app-card" href="/skyjo/" style="--game-color:#0277bd">
-      <div class="art">
-        <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect width="300" height="130" fill="#0277bd"/>
-          <g fill="rgba(255,255,255,0.15)" stroke="#fff" stroke-width="1.5" opacity="0.6">
-            <rect x="68"  y="18" width="36" height="26" rx="2"/>
-            <rect x="112" y="18" width="36" height="26" rx="2"/>
-            <rect x="156" y="18" width="36" height="26" rx="2"/>
-            <rect x="200" y="18" width="36" height="26" rx="2"/>
-            <rect x="68"  y="52" width="36" height="26" rx="2"/>
-            <rect x="112" y="52" width="36" height="26" rx="2"/>
-            <rect x="156" y="52" width="36" height="26" rx="2"/>
-            <rect x="200" y="52" width="36" height="26" rx="2"/>
-            <rect x="68"  y="86" width="36" height="26" rx="2"/>
-            <rect x="112" y="86" width="36" height="26" rx="2"/>
-            <rect x="156" y="86" width="36" height="26" rx="2"/>
-            <rect x="200" y="86" width="36" height="26" rx="2"/>
-          </g>
-          <g text-anchor="middle" font-family="monospace" font-size="11" fill="#fff" opacity="0.85">
-            <text x="86"  y="35">-2</text>
-            <text x="130" y="35">5</text>
-            <text x="174" y="35">12</text>
-            <text x="218" y="35">3</text>
-            <text x="86"  y="69">7</text>
-            <text x="174" y="69">-1</text>
-            <text x="218" y="69">10</text>
-            <text x="86"  y="103">4</text>
-            <text x="130" y="103">8</text>
-            <text x="218" y="103">0</text>
-          </g>
-        </svg>
-      </div>
-      <div class="card-info">
-        <h2>Skyjo</h2>
-        <p>Flip and swap cards to build the lowest grid. Game ends when someone hits 100.</p>
-      </div>
-      <div class="card-link">Open →</div>
-    </a>
+      <!-- Skyjo: sky blue -->
+      <a class="app-card" href="/skyjo/" style="--game-color:#0277bd">
+        <div class="art">
+          <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="300" height="130" fill="#0277bd"/>
+            <g fill="rgba(255,255,255,0.15)" stroke="#fff" stroke-width="1.5" opacity="0.6">
+              <rect x="68"  y="18" width="36" height="26" rx="2"/>
+              <rect x="112" y="18" width="36" height="26" rx="2"/>
+              <rect x="156" y="18" width="36" height="26" rx="2"/>
+              <rect x="200" y="18" width="36" height="26" rx="2"/>
+              <rect x="68"  y="52" width="36" height="26" rx="2"/>
+              <rect x="112" y="52" width="36" height="26" rx="2"/>
+              <rect x="156" y="52" width="36" height="26" rx="2"/>
+              <rect x="200" y="52" width="36" height="26" rx="2"/>
+              <rect x="68"  y="86" width="36" height="26" rx="2"/>
+              <rect x="112" y="86" width="36" height="26" rx="2"/>
+              <rect x="156" y="86" width="36" height="26" rx="2"/>
+              <rect x="200" y="86" width="36" height="26" rx="2"/>
+            </g>
+            <g text-anchor="middle" font-family="monospace" font-size="11" fill="#fff" opacity="0.85">
+              <text x="86"  y="35">-2</text>
+              <text x="130" y="35">5</text>
+              <text x="174" y="35">12</text>
+              <text x="218" y="35">3</text>
+              <text x="86"  y="69">7</text>
+              <text x="174" y="69">-1</text>
+              <text x="218" y="69">10</text>
+              <text x="86"  y="103">4</text>
+              <text x="130" y="103">8</text>
+              <text x="218" y="103">0</text>
+            </g>
+          </svg>
+        </div>
+        <div class="card-info">
+          <h2>Skyjo</h2>
+          <p>Flip and swap cards to build the lowest grid. Game ends when someone hits 100.</p>
+        </div>
+        <div class="card-link">Open →</div>
+      </a>
 
-    <!-- Stock Report: financial green -->
-    <a class="app-card" href="/stock-report/" style="--game-color:#1a6640">
-      <div class="art">
-        <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect width="300" height="130" fill="#1a6640"/>
-          <polyline points="20,100 60,80 100,90 140,55 180,65 220,30 260,40 290,20"
-            fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
-          <polyline points="20,100 60,80 100,90 140,55 180,65 220,30 260,40 290,20"
-            fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
-          <g fill="#fff" opacity="0.9">
-            <circle cx="140" cy="55" r="3.5"/>
-            <circle cx="220" cy="30" r="3.5"/>
-            <circle cx="290" cy="20" r="3.5"/>
-          </g>
-          <g font-family="monospace" font-size="11" fill="#fff" opacity="0.6" text-anchor="middle">
-            <text x="60"  y="122">Mon</text>
-            <text x="140" y="122">Wed</text>
-            <text x="220" y="122">Thu</text>
-          </g>
-        </svg>
-      </div>
-      <div class="card-info">
-        <h2>Stock Report</h2>
-        <p>Daily AI-generated digest of watchlist performance, news, and earnings. Updated at 10 AM and 4 PM ET.</p>
-      </div>
-      <div class="card-link">Open →</div>
-    </a>
+      <!-- Flip 7: deep orange -->
+      <a class="app-card" href="/flip-7/" style="--game-color:#d84315">
+        <div class="art">
+          <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="300" height="130" fill="#d84315"/>
+            <g fill="rgba(255,255,255,0.18)" stroke="#fff" stroke-width="1.5" opacity="0.65">
+              <rect x="132" y="30" width="36" height="52" rx="3" transform="rotate(-27,150,100)"/>
+              <rect x="132" y="30" width="36" height="52" rx="3" transform="rotate(-18,150,100)"/>
+              <rect x="132" y="30" width="36" height="52" rx="3" transform="rotate(-9,150,100)"/>
+              <rect x="132" y="30" width="36" height="52" rx="3"/>
+              <rect x="132" y="30" width="36" height="52" rx="3" transform="rotate(9,150,100)"/>
+              <rect x="132" y="30" width="36" height="52" rx="3" transform="rotate(18,150,100)"/>
+              <rect x="132" y="30" width="36" height="52" rx="3" transform="rotate(27,150,100)"/>
+            </g>
+            <g text-anchor="middle" font-family="monospace" font-size="13" fill="#fff">
+              <g transform="rotate(-27,150,100)" opacity="0.8"><text x="150" y="62">1</text></g>
+              <g transform="rotate(-18,150,100)" opacity="0.8"><text x="150" y="62">2</text></g>
+              <g transform="rotate(-9,150,100)"  opacity="0.8"><text x="150" y="62">3</text></g>
+              <g opacity="0.8"><text x="150" y="62">4</text></g>
+              <g transform="rotate(9,150,100)"   opacity="0.8"><text x="150" y="62">5</text></g>
+              <g transform="rotate(18,150,100)"  opacity="0.8"><text x="150" y="62">6</text></g>
+              <g transform="rotate(27,150,100)"  opacity="0.8"><text x="150" y="62">7</text></g>
+            </g>
+          </svg>
+        </div>
+        <div class="card-info">
+          <h2>Flip 7</h2>
+          <p>Press your luck flipping cards. Bust on a duplicate. Highest score wins.</p>
+        </div>
+        <div class="card-link">Open →</div>
+      </a>
 
-    <!-- Flip 7: deep orange -->
-    <a class="app-card" href="/flip-7/" style="--game-color:#d84315">
-      <div class="art">
-        <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect width="300" height="130" fill="#d84315"/>
-          <g fill="rgba(255,255,255,0.18)" stroke="#fff" stroke-width="1.5" opacity="0.65">
-            <rect x="132" y="30" width="36" height="52" rx="3" transform="rotate(-27,150,100)"/>
-            <rect x="132" y="30" width="36" height="52" rx="3" transform="rotate(-18,150,100)"/>
-            <rect x="132" y="30" width="36" height="52" rx="3" transform="rotate(-9,150,100)"/>
-            <rect x="132" y="30" width="36" height="52" rx="3"/>
-            <rect x="132" y="30" width="36" height="52" rx="3" transform="rotate(9,150,100)"/>
-            <rect x="132" y="30" width="36" height="52" rx="3" transform="rotate(18,150,100)"/>
-            <rect x="132" y="30" width="36" height="52" rx="3" transform="rotate(27,150,100)"/>
-          </g>
-          <g text-anchor="middle" font-family="monospace" font-size="13" fill="#fff">
-            <g transform="rotate(-27,150,100)" opacity="0.8"><text x="150" y="62">1</text></g>
-            <g transform="rotate(-18,150,100)" opacity="0.8"><text x="150" y="62">2</text></g>
-            <g transform="rotate(-9,150,100)"  opacity="0.8"><text x="150" y="62">3</text></g>
-            <g opacity="0.8"><text x="150" y="62">4</text></g>
-            <g transform="rotate(9,150,100)"   opacity="0.8"><text x="150" y="62">5</text></g>
-            <g transform="rotate(18,150,100)"  opacity="0.8"><text x="150" y="62">6</text></g>
-            <g transform="rotate(27,150,100)"  opacity="0.8"><text x="150" y="62">7</text></g>
-          </g>
-        </svg>
-      </div>
-      <div class="card-info">
-        <h2>Flip 7</h2>
-        <p>Press your luck flipping cards. Bust on a duplicate. Highest score wins.</p>
-      </div>
-      <div class="card-link">Open →</div>
-    </a>
-
+    </div>
   </div>
+
+  <div class="section">
+    <div class="section-label">Reports</div>
+    <div class="grid">
+
+      <!-- Stock Report: financial green -->
+      <a class="app-card" href="/stock-report/" style="--game-color:#1a6640">
+        <div class="art">
+          <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="300" height="130" fill="#1a6640"/>
+            <polyline points="20,100 60,80 100,90 140,55 180,65 220,30 260,40 290,20"
+              fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+            <polyline points="20,100 60,80 100,90 140,55 180,65 220,30 260,40 290,20"
+              fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+            <g fill="#fff" opacity="0.9">
+              <circle cx="140" cy="55" r="3.5"/>
+              <circle cx="220" cy="30" r="3.5"/>
+              <circle cx="290" cy="20" r="3.5"/>
+            </g>
+            <g font-family="monospace" font-size="11" fill="#fff" opacity="0.6" text-anchor="middle">
+              <text x="60"  y="122">Mon</text>
+              <text x="140" y="122">Wed</text>
+              <text x="220" y="122">Thu</text>
+            </g>
+          </svg>
+        </div>
+        <div class="card-info">
+          <h2>Stock Report</h2>
+          <p>Daily AI-generated digest of watchlist performance, news, and earnings. Updated at 10 AM and 4 PM ET.</p>
+        </div>
+        <div class="card-link">Open →</div>
+      </a>
+
+    </div>
+  </div>
+
 </body>
 </html>
