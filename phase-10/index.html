@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Phase 10</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: monospace;
-      background: #fff;
-      color: #000;
-      padding: 20px;
-      max-width: 1024px;
-      margin: 0 auto;
+    :root {
+      --primary:       #1565c0;
+      --primary-dark:  #0d47a1;
+      --primary-light: #e3f2fd;
     }
 
-    nav { margin-bottom: 16px; font-size: 0.85rem; }
-    nav a { color: #000; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: monospace; background: #fff; color: #000; }
 
-    h1 { margin-bottom: 16px; font-size: 1.3rem; }
+    .page-header { background: var(--primary); padding: 12px 20px 16px; }
+    .back-link { display: block; color: rgba(255,255,255,0.7); font-size: 0.8rem; text-decoration: none; margin-bottom: 6px; }
+    .back-link:hover { color: #fff; }
+    .page-header h1 { color: #fff; font-size: 1.4rem; }
+
+    main { padding: 20px; max-width: 760px; margin: 0 auto; }
 
     button {
       border: 1px solid #000;
@@ -33,88 +33,86 @@
     }
     button:hover:not(:disabled) { background: #000; color: #fff; }
     button:disabled { opacity: 0.35; cursor: default; }
+    button.primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+    button.primary:hover:not(:disabled) { background: var(--primary-dark); border-color: var(--primary-dark); }
 
     input[type="text"] {
-      border: 1px solid #000;
-      padding: 4px 8px;
-      font-family: monospace;
-      font-size: 0.9rem;
-      width: 160px;
-      height: 36px;
+      border: 1px solid #000; padding: 4px 8px; font-family: monospace;
+      font-size: 0.9rem; width: 160px; height: 36px;
     }
     input[type="number"] {
-      border: 1px solid #000;
-      padding: 3px 4px;
-      font-family: monospace;
-      font-size: 0.9rem;
-      width: 60px;
-      text-align: center;
+      border: 1px solid #ccc; padding: 4px 6px; font-family: monospace;
+      font-size: 1rem; width: 72px; text-align: center;
     }
     select {
-      border: 1px solid #000;
-      padding: 4px 6px;
-      font-family: monospace;
-      font-size: 0.9rem;
-      background: #fff;
-      height: 36px;
+      border: 1px solid #000; padding: 4px 6px; font-family: monospace;
+      font-size: 0.9rem; background: #fff; height: 36px;
     }
 
-    .top-bar { display: flex; gap: 8px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
-    .add-row  { display: flex; gap: 6px; align-items: center; margin-bottom: 10px; }
+    .top-bar    { display: flex; gap: 8px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
+    .add-row    { display: flex; gap: 6px; align-items: center; margin-bottom: 10px; }
     .player-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; min-height: 28px; }
     .player-tag {
-      border: 1px solid #000;
-      padding: 2px 8px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.9rem;
+      border: 1px solid var(--primary); background: var(--primary-light);
+      padding: 2px 8px; display: flex; align-items: center; gap: 6px; font-size: 0.9rem;
     }
-    .rm-btn { border: none; background: none; cursor: pointer; font-size: 1rem; padding: 0 2px; line-height: 1; font-family: monospace; min-height: unset; }
-    .rm-btn:hover { background: #000; color: #fff; }
+    .rm-btn { border: none; background: none; cursor: pointer; font-size: 1rem; padding: 0 2px; line-height: 1; font-family: monospace; color: var(--primary); min-height: unset; }
+    .rm-btn:hover { background: var(--primary); color: #fff; }
     .dealer-row { display: flex; gap: 8px; align-items: center; margin-bottom: 14px; font-size: 0.9rem; }
-
-    .table-wrapper { overflow-x: auto; margin-bottom: 12px; }
-    table { border-collapse: collapse; min-width: 100%; }
-    th, td { border: 1px solid #000; padding: 6px 10px; text-align: center; white-space: nowrap; }
-    thead th { background: #000; color: #fff; }
-    thead th.phase-row { background: #444; font-size: 0.75rem; font-weight: normal; }
-    tbody tr.totals td { font-weight: bold; border-top: 2px solid #000; }
-    tbody tr.current td { background: #eee; }
-
-    .score-cell { display: flex; flex-direction: column; align-items: center; gap: 4px; }
-    .phase-check { display: flex; align-items: center; gap: 3px; font-size: 0.75rem; white-space: nowrap; }
-    .phase-check input[type="checkbox"] { cursor: pointer; width: 14px; height: 14px; }
-
-    .submit-row { display: flex; justify-content: flex-end; margin-bottom: 16px; }
-    .winner { border: 2px solid #000; padding: 10px 16px; margin-bottom: 16px; font-weight: bold; }
-    .hint { font-size: 0.85rem; margin-top: 8px; }
+    .hint { font-size: 0.85rem; margin-top: 8px; color: #555; }
 
     .phase-ref {
-      border: 1px solid #ccc;
-      padding: 10px 14px;
-      margin-bottom: 20px;
-      font-size: 0.78rem;
-      line-height: 1.7;
+      border-left: 3px solid var(--primary); background: var(--primary-light);
+      padding: 8px 12px; margin-bottom: 16px; font-size: 0.78rem; line-height: 1.7;
     }
-    .phase-ref summary { cursor: pointer; font-weight: bold; font-size: 0.85rem; }
+    .phase-ref summary { cursor: pointer; font-weight: bold; font-size: 0.85rem; color: var(--primary); }
 
-    @media (max-width: 480px) {
-      body { padding: 14px; }
-      input[type="number"] { width: 50px; }
+    /* Score entry */
+    .round-info {
+      font-size: 0.9rem; font-weight: bold; padding: 8px 12px; margin-bottom: 10px;
+      background: var(--primary-light); border-left: 3px solid var(--primary); color: var(--primary);
     }
+    .entry-table { border-collapse: collapse; margin-bottom: 10px; }
+    .entry-table td { border: 1px solid #ccc; padding: 6px 10px; }
+    .entry-name { background: var(--primary-light); text-align: left; min-width: 100px; }
+    .phase-check { display: flex; align-items: center; gap: 4px; font-size: 0.85rem; white-space: nowrap; }
+    .phase-check input[type="checkbox"] { cursor: pointer; width: 15px; height: 15px; accent-color: var(--primary); }
+    .submit-row { display: flex; justify-content: flex-end; margin-bottom: 20px; }
+
+    /* History table */
+    .table-wrapper { overflow-x: auto; }
+    table.score-history { border-collapse: collapse; min-width: 100%; }
+    table.score-history th, table.score-history td { border: 1px solid #ccc; padding: 6px 10px; text-align: center; white-space: nowrap; }
+    table.score-history thead th { background: var(--primary); color: #fff; border-color: var(--primary-dark); }
+    table.score-history thead th.sub { background: var(--primary-dark); font-size: 0.75rem; font-weight: normal; }
+    table.score-history .player-name { text-align: left; }
+    table.score-history .player-phase { color: var(--primary); font-size: 0.8rem; }
+    table.score-history .player-total { font-weight: bold; background: var(--primary-light); }
+    table.score-history tbody tr:nth-child(even) { background: #fafafa; }
+    .advanced-mark { color: var(--primary); }
+
+    .winner {
+      border: 2px solid var(--primary); background: var(--primary);
+      color: #fff; padding: 12px 16px; margin-bottom: 16px;
+      font-weight: bold; font-size: 1.05rem;
+    }
+
+    @media (max-width: 480px) { main { padding: 14px; } }
   </style>
 </head>
 <body>
-  <nav><a href="/">← Home</a></nav>
-  <h1>Phase 10</h1>
+  <header class="page-header">
+    <a href="/" class="back-link">← Home</a>
+    <h1>Phase 10</h1>
+  </header>
 
-  <div class="top-bar">
-    <button id="btn-new">New Game</button>
-    <button id="btn-undo" disabled>Undo</button>
-  </div>
-
-  <div id="app"></div>
+  <main>
+    <div class="top-bar">
+      <button id="btn-new">New Game</button>
+      <button id="btn-undo" disabled>Undo</button>
+    </div>
+    <div id="app"></div>
+  </main>
 
   <script>
     const PHASES = [
@@ -134,71 +132,54 @@
     let history = [];
 
     function blankState() {
-      return {
-        phase: 'setup',
-        players: [],
-        firstDealerIndex: 0,
-        playerPhases: [],  // 1-indexed (1 = Phase 1, ..., 10 = Phase 10, 11 = done)
-        rounds: [],        // { roundIndex, dealerIndex, scores: number[], advanced: boolean[] }
-      };
+      return { phase: 'setup', players: [], firstDealerIndex: 0, playerPhases: [], rounds: [] };
     }
 
     function snapshot() { history.push(JSON.stringify(state)); }
     function mutate(fn) { snapshot(); fn(); render(); }
 
-    // ── Actions ───────────────────────────────────────────────────────────────
-
     function addPlayer(name) {
       name = name.trim();
-      if (!name) return false;
-      mutate(() => { state.players = [...state.players, name]; state.playerPhases = [...state.playerPhases, 1]; });
-      return true;
+      if (!name) return;
+      mutate(() => {
+        state.players = [...state.players, name];
+        state.playerPhases = [...state.playerPhases, 1];
+      });
+      document.getElementById('player-name-input')?.focus();
     }
 
     function removePlayer(idx) {
       mutate(() => {
         const next = state.players.filter((_, i) => i !== idx);
-        const nextPhases = state.playerPhases.filter((_, i) => i !== idx);
+        const nextP = state.playerPhases.filter((_, i) => i !== idx);
         let d = state.firstDealerIndex;
         if (idx < d) d -= 1;
         else if (idx === d) d = 0;
         if (d >= next.length) d = 0;
-        state.players = next;
-        state.playerPhases = nextPhases;
-        state.firstDealerIndex = d;
+        state.players = next; state.playerPhases = nextP; state.firstDealerIndex = d;
       });
     }
 
     function setDealer(idx) { mutate(() => { state.firstDealerIndex = idx; }); }
-
-    function startGame() {
-      if (state.players.length < 2) return;
-      mutate(() => { state.phase = 'playing'; });
-    }
+    function startGame()    { if (state.players.length >= 2) mutate(() => { state.phase = 'playing'; }); }
+    function resetGame()    { snapshot(); state = blankState(); render(); }
+    function undo()         { if (history.length) { state = JSON.parse(history.pop()); render(); } }
 
     function submitRound(scores, advanced) {
       const roundIndex = state.rounds.length;
-      const dealerIndex = dealerFor(roundIndex);
       mutate(() => {
         const newPhases = state.playerPhases.map((p, i) => advanced[i] ? p + 1 : p);
-        state.rounds = [...state.rounds, { roundIndex, dealerIndex, scores, advanced }];
+        state.rounds = [...state.rounds, { roundIndex, dealerIndex: dealerFor(roundIndex), scores, advanced }];
         state.playerPhases = newPhases;
         if (newPhases.some(p => p > 10)) state.phase = 'complete';
       });
     }
 
-    function resetGame() { snapshot(); state = blankState(); render(); }
-    function undo() { if (!history.length) return; state = JSON.parse(history.pop()); render(); }
-
-    // ── Helpers ───────────────────────────────────────────────────────────────
-
-    function dealerFor(roundIndex) {
-      return (state.firstDealerIndex + roundIndex) % state.players.length;
-    }
+    function dealerFor(ri) { return (state.firstDealerIndex + ri) % state.players.length; }
 
     function runningTotals() {
       return state.players.map((_, pi) =>
-        state.rounds.reduce((sum, r) => sum + (r.scores[pi] ?? 0), 0)
+        state.rounds.reduce((s, r) => s + (r.scores[pi] ?? 0), 0)
       );
     }
 
@@ -208,28 +189,28 @@
       return e;
     }
     function makeTh(text, cls) { const t = el('th'); t.textContent = text; if (cls) t.className = cls; return t; }
-    function makeTd(text) { const t = el('td'); t.textContent = text; return t; }
+    function makeTd(text)      { const t = el('td'); t.textContent = text; return t; }
 
-    // ── Phase renderers ───────────────────────────────────────────────────────
-
-    function renderSetup() {
-      const wrap = el('div');
-
-      // Phase reference
+    function phaseRef() {
       const details = el('details', { className: 'phase-ref' });
       const summary = el('summary'); summary.textContent = 'Phase reference'; details.appendChild(summary);
       PHASES.forEach((desc, i) => {
-        const p = el('div');
-        p.textContent = `Phase ${i + 1}: ${desc}`;
-        details.appendChild(p);
+        const d = el('div'); d.textContent = `Phase ${i + 1}: ${desc}`; details.appendChild(d);
       });
-      wrap.appendChild(details);
+      return details;
+    }
+
+    // ── Setup ─────────────────────────────────────────────────────────────────
+
+    function renderSetup() {
+      const wrap = el('div');
+      wrap.appendChild(phaseRef());
 
       const addRow = el('div', { className: 'add-row' });
-      const nameInput = el('input', { type: 'text', placeholder: 'Player name' });
+      const nameInput = el('input', { type: 'text', placeholder: 'Player name', id: 'player-name-input' });
       const addBtn = el('button', { textContent: 'Add Player' });
-      addBtn.onclick = () => { if (addPlayer(nameInput.value)) nameInput.value = ''; nameInput.focus(); };
-      nameInput.onkeydown = e => { if (e.key === 'Enter') addBtn.click(); };
+      addBtn.onclick = () => addPlayer(nameInput.value);
+      nameInput.onkeydown = e => { if (e.key === 'Enter') addPlayer(nameInput.value); };
       addRow.append(nameInput, addBtn);
       wrap.appendChild(addRow);
 
@@ -256,7 +237,7 @@
         sel.onchange = () => setDealer(+sel.value);
         dealerRow.appendChild(sel);
         wrap.appendChild(dealerRow);
-        const startBtn = el('button', { textContent: 'Start Game' });
+        const startBtn = el('button', { className: 'primary', textContent: 'Start Game' });
         startBtn.onclick = startGame;
         wrap.appendChild(startBtn);
       } else {
@@ -266,126 +247,120 @@
       return wrap;
     }
 
-    function buildTable(showInputRow) {
-      const wrapper = el('div', { className: 'table-wrapper' });
-      const table = el('table');
+    // ── Score entry ───────────────────────────────────────────────────────────
 
-      // Header row: player names
+    function buildScoreEntry() {
+      const ri = state.rounds.length;
+      const wrap = el('div');
+
+      const info = el('div', { className: 'round-info' });
+      info.textContent = `Round ${ri + 1} · Dealer: ${state.players[dealerFor(ri)]}`;
+      wrap.appendChild(info);
+
+      const table = el('table', { className: 'entry-table' });
+      const tbody = el('tbody');
+      const inputs = [], checks = [];
+
+      state.players.forEach((name, i) => {
+        const tr = el('tr');
+        const nameTd = el('td', { className: 'entry-name' });
+        nameTd.textContent = name;
+        tr.appendChild(nameTd);
+
+        const inp = el('input');
+        inp.type = 'number'; inp.min = '0'; inp.placeholder = '0';
+        inp.setAttribute('inputmode', 'numeric');
+        inputs.push(inp);
+        const inputTd = el('td'); inputTd.appendChild(inp); tr.appendChild(inputTd);
+
+        const chkTd = el('td');
+        const label = el('label', { className: 'phase-check' });
+        const chk = el('input'); chk.type = 'checkbox';
+        chk.title = PHASES[state.playerPhases[i] - 1] ?? '';
+        checks.push(chk);
+        label.appendChild(chk);
+        label.appendChild(document.createTextNode(` Ph.${state.playerPhases[i]}`));
+        chkTd.appendChild(label);
+        tr.appendChild(chkTd);
+
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+
+      const submitRow = el('div', { className: 'submit-row' });
+      const btn = el('button', { className: 'primary', textContent: 'Submit Round' });
+      btn.onclick = () => {
+        const scores = inputs.map(inp => { const v = parseInt(inp.value, 10); return isNaN(v) ? 0 : Math.max(0, v); });
+        submitRound(scores, checks.map(c => c.checked));
+      };
+      submitRow.appendChild(btn);
+      wrap.appendChild(submitRow);
+
+      return wrap;
+    }
+
+    // ── History table ─────────────────────────────────────────────────────────
+
+    function buildHistoryTable() {
+      if (state.rounds.length === 0) return null;
+
+      const wrapper = el('div', { className: 'table-wrapper' });
+      const table = el('table', { className: 'score-history' });
+
       const thead = el('thead');
       const hrow = el('tr');
-      ['Round', 'Dealer', ...state.players].forEach(t => hrow.appendChild(makeTh(t)));
+      hrow.appendChild(makeTh('Player'));
+      hrow.appendChild(makeTh('Ph.'));
+      state.rounds.forEach((_, i) => hrow.appendChild(makeTh(`R${i + 1}`)));
+      hrow.appendChild(makeTh('Total'));
       thead.appendChild(hrow);
-
-      // Phase sub-header
-      const phrow = el('tr');
-      phrow.appendChild(makeTh('', 'phase-row'));
-      phrow.appendChild(makeTh('', 'phase-row'));
-      state.playerPhases.forEach(p => {
-        const t = makeTh(p <= 10 ? `Phase ${p}` : 'Done!', 'phase-row');
-        phrow.appendChild(t);
-      });
-      thead.appendChild(phrow);
       table.appendChild(thead);
 
       const tbody = el('tbody');
+      const tots = runningTotals();
 
-      state.rounds.forEach(r => {
+      state.players.forEach((name, pi) => {
         const tr = el('tr');
-        tr.appendChild(makeTd(r.roundIndex + 1));
-        tr.appendChild(makeTd(state.players[r.dealerIndex]));
-        r.scores.forEach((score, i) => {
-          const td = el('td');
-          td.textContent = score;
-          if (r.advanced[i]) {
-            const badge = el('span');
-            badge.textContent = ' ✓';
-            badge.title = 'Completed phase';
-            td.appendChild(badge);
+        tr.appendChild(el('td', { className: 'player-name', textContent: name }));
+        const phaseTd = el('td', { className: 'player-phase' });
+        const ph = state.playerPhases[pi];
+        phaseTd.textContent = ph <= 10 ? ph : '✓';
+        tr.appendChild(phaseTd);
+
+        state.rounds.forEach(r => {
+          const td = makeTd(r.scores[pi]);
+          if (r.advanced[pi]) {
+            const mark = el('span', { className: 'advanced-mark', textContent: '✓' });
+            td.appendChild(mark);
           }
           tr.appendChild(td);
         });
+
+        tr.appendChild(el('td', { className: 'player-total', textContent: tots[pi] }));
         tbody.appendChild(tr);
       });
-
-      let currentInputs = null;
-      let currentChecks = null;
-      if (showInputRow) {
-        const ri = state.rounds.length;
-        const tr = el('tr', { className: 'current' });
-        tr.appendChild(makeTd(ri + 1));
-        tr.appendChild(makeTd(state.players[dealerFor(ri)]));
-        currentInputs = [];
-        currentChecks = [];
-        state.players.forEach((_, i) => {
-          const td = el('td');
-          const cell = el('div', { className: 'score-cell' });
-
-          const inp = el('input');
-          inp.type = 'number'; inp.min = '0'; inp.placeholder = '0';
-          inp.setAttribute('inputmode', 'numeric');
-          currentInputs.push(inp);
-
-          const checkRow = el('label', { className: 'phase-check' });
-          const chk = el('input'); chk.type = 'checkbox';
-          currentChecks.push(chk);
-          const phaseNum = state.playerPhases[i];
-          checkRow.appendChild(chk);
-          checkRow.appendChild(document.createTextNode(` Ph.${phaseNum}`));
-
-          cell.append(inp, checkRow);
-          td.appendChild(cell);
-          tr.appendChild(td);
-        });
-        tbody.appendChild(tr);
-      }
-
-      const tots = runningTotals();
-      const totRow = el('tr', { className: 'totals' });
-      totRow.appendChild(makeTd('Total'));
-      totRow.appendChild(makeTd(''));
-      tots.forEach(v => totRow.appendChild(makeTd(v)));
-      tbody.appendChild(totRow);
 
       table.appendChild(tbody);
       wrapper.appendChild(table);
-      return { wrapper, currentInputs, currentChecks };
+      return wrapper;
     }
+
+    // ── Phase renderers ───────────────────────────────────────────────────────
 
     function renderPlaying() {
       const wrap = el('div');
-
-      // Phase ref collapsible
-      const details = el('details', { className: 'phase-ref' });
-      const summary = el('summary'); summary.textContent = 'Phase reference'; details.appendChild(summary);
-      PHASES.forEach((desc, i) => {
-        const p = el('div');
-        p.textContent = `Phase ${i + 1}: ${desc}`;
-        details.appendChild(p);
-      });
-      wrap.appendChild(details);
-
-      const { wrapper, currentInputs, currentChecks } = buildTable(true);
-      wrap.appendChild(wrapper);
-
-      const submitRow = el('div', { className: 'submit-row' });
-      const submitBtn = el('button', { textContent: 'Submit Round' });
-      submitBtn.onclick = () => {
-        const scores = currentInputs.map(inp => {
-          const v = parseInt(inp.value, 10);
-          return isNaN(v) ? 0 : Math.max(0, v);
-        });
-        const advanced = currentChecks.map(chk => chk.checked);
-        submitRound(scores, advanced);
-      };
-      submitRow.appendChild(submitBtn);
-      wrap.appendChild(submitRow);
+      wrap.appendChild(phaseRef());
+      wrap.appendChild(buildScoreEntry());
+      const hist = buildHistoryTable();
+      if (hist) wrap.appendChild(hist);
       return wrap;
     }
 
     function renderComplete() {
       const wrap = el('div');
       const tots = runningTotals();
-      // Winners are players who completed phase 10
       const finishers = state.players
         .map((name, i) => ({ name, total: tots[i], phase: state.playerPhases[i] }))
         .filter(p => p.phase > 10);
@@ -396,17 +371,17 @@
         ? `Winner: ${winners[0].name} — ${minScore} pts`
         : `Tie: ${winners.map(w => w.name).join(' & ')} — ${minScore} pts`;
       wrap.appendChild(banner);
-      const { wrapper } = buildTable(false);
-      wrap.appendChild(wrapper);
+      const hist = buildHistoryTable();
+      if (hist) wrap.appendChild(hist);
       return wrap;
     }
 
     function render() {
       const app = document.getElementById('app');
       app.innerHTML = '';
-      if (state.phase === 'setup') app.appendChild(renderSetup());
+      if (state.phase === 'setup')        app.appendChild(renderSetup());
       else if (state.phase === 'playing') app.appendChild(renderPlaying());
-      else app.appendChild(renderComplete());
+      else                                app.appendChild(renderComplete());
       document.getElementById('btn-undo').disabled = history.length === 0;
     }
 
