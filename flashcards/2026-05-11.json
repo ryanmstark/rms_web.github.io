@@ -1,68 +1,67 @@
 {
   "date": "2026-05-11",
-  "generated_at": "May 11, 2026 at 14:49 UTC",
+  "generated_at": "May 11, 2026 at 14:58 UTC",
   "cards": [
     {
       "id": "ee_comms",
-      "title": "Recent Advances in Phased Array Antennas for Satellite Communications",
+      "title": "NASA's Near-Earth Asteroid Scout Mission Utilizes Advanced Phased Array Antennas for Deep Space Communication",
       "body": [
-        "Phased array antennas have become a crucial component in modern satellite communication systems, offering enhanced beam steering and shaping capabilities. These antennas consist of numerous small antennas arranged in a grid, which can be controlled electronically to direct the beam towards specific targets. Recent advancements in phased array technology have led to the development of more efficient, compact, and cost-effective designs. For instance, the use of hybrid beamforming architectures has improved the antenna's ability to handle multiple beams simultaneously, increasing the overall system capacity.",
-        "Another significant development in phased array antennas is the integration of artificial intelligence (AI) and machine learning (ML) algorithms. These algorithms can optimize beamforming and beam steering in real-time, allowing the antenna to adapt to changing environmental conditions and interference. This has particular importance in satellite communications, where signal degradation due to atmospheric interference and multipath effects can be significant. By leveraging AI/ML, phased array antennas can maintain optimal performance and ensure reliable communication links.",
-        "The application of phased array antennas in satellite communications extends beyond traditional fixed-satellite services. They are also being used in emerging applications such as satellite-based 5G networks and low-Earth orbit (LEO) constellations. In these scenarios, phased array antennas enable the creation of highly directional and steerable beams, which can be used to provide high-speed, low-latency connectivity to mobile users. This has the potential to revolutionize the way we access and use satellite-based communication services, enabling a wide range of new applications and use cases.",
-        "From a design perspective, phased array antennas for satellite communications require careful consideration of factors such as antenna geometry, element spacing, and feed network architecture. Advanced simulation tools and modeling techniques are used to optimize the antenna's performance and minimize potential issues such as mutual coupling and scan blindness. Furthermore, the use of novel materials and manufacturing techniques, such as 3D printing and metamaterials, is being explored to create more efficient and compact phased array designs."
+        "The Near-Earth Asteroid Scout mission, launched in 2022, features a pioneering use of phased array antennas for deep space communication. This mission aims to send a small spacecraft to a near-Earth asteroid, with the primary goal of demonstrating the capabilities of a new propulsion system and gathering data about the asteroid's composition and orbit. The phased array antenna system, developed in collaboration with NASA and private industry partners, allows for high-gain, directional communication with Earth, enabling the spacecraft to transmit large amounts of data back to Earth despite its small size and distance.",
+        "The phased array antenna system consists of multiple small antennas that work together to form a high-gain beam, allowing for more efficient use of power and increased data transmission rates. This technology has significant implications for future deep space missions, where communication with Earth is often a major challenge due to the vast distances involved. By utilizing phased array antennas, spacecraft can achieve higher data transmission rates while minimizing power consumption, making them ideal for missions where power is limited.",
+        "In addition to the phased array antenna system, the Near-Earth Asteroid Scout mission also features advanced RF communication systems, including a high-gain transceiver and a sophisticated modulation scheme. These systems work together to enable the spacecraft to transmit data back to Earth at rates of up to 100 kbps, despite being millions of kilometers away. The success of this mission has significant implications for the development of future deep space communication systems, and demonstrates the potential of phased array antennas and advanced RF communication systems for enabling high-speed communication in space.",
+        "The mission's communication system is designed to operate in the X-band frequency range, which offers a good balance between data transmission rate and power consumption. The system's performance is also optimized using advanced link budget analysis and simulation tools, which allow engineers to model and predict the system's behavior under various operating conditions. By combining advanced phased array antenna technology with sophisticated RF communication systems and careful link budget analysis, the Near-Earth Asteroid Scout mission is able to achieve high-speed communication with Earth, despite the significant challenges posed by deep space communication."
       ],
-      "why": "The development of advanced phased array antennas has significant implications for the future of satellite communications, enabling faster, more reliable, and more efficient data transfer. As the demand for satellite-based services continues to grow, driven by emerging applications such as 5G and LEO constellations, the importance of phased array technology will only continue to increase. By providing a means to create highly directional and steerable beams, phased array antennas can help to unlock the full potential of satellite communications, supporting a wide range of critical applications and services.",
+      "why": "The development of advanced phased array antennas and RF communication systems for deep space missions has significant implications for the future of space exploration. By enabling high-speed communication between spacecraft and Earth, these technologies can facilitate the transmission of large amounts of data, including high-resolution images and scientific data, which can be used to better understand the universe and make new discoveries. This can also enable more efficient and effective operation of spacecraft, allowing them to respond quickly to changing conditions and make the most of their limited power and resources. As space agencies and private companies continue to push the boundaries of space exploration, the development of advanced communication systems will play a critical role in enabling the success of these missions.",
       "sources": [
         {
-          "name": "IEEE Antennas and Propagation Magazine",
-          "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=74"
+          "name": "NASA",
+          "url": "https://www.nasa.gov/"
         },
-        {
-          "name": "NASA Technical Reports Server",
-          "url": "https://ntrs.nasa.gov/"
-        },
-        {
-          "name": "European Space Agency",
-          "url": "https://www.esa.int/"
-        }
-      ]
-    },
-    {
-      "id": "ee_core",
-      "title": "Envelope Tracking for RF Power Amplifiers",
-      "body": [
-        "Envelope tracking is a technique used in RF power amplifier design to improve efficiency and linearity. It involves dynamically adjusting the power supply voltage of the amplifier to match the instantaneous envelope of the input signal. This approach can significantly reduce power consumption and heat generation, making it particularly useful for modern wireless communication systems where high data rates and complex modulation schemes are used.",
-        "Traditionally, RF power amplifiers are designed to operate at a fixed supply voltage, which can lead to inefficient operation, especially when the input signal has a high peak-to-average power ratio (PAPR). Envelope tracking, on the other hand, allows the amplifier to operate closer to its optimal efficiency point, resulting in reduced energy consumption and improved reliability. The technique requires a high-bandwidth power supply and a sophisticated control system to accurately track the envelope of the input signal.",
-        "The implementation of envelope tracking involves several key components, including a high-speed digital-to-analog converter (DAC), a power management integrated circuit (PMIC), and a control algorithm that generates the tracking signal. The control algorithm typically uses a combination of feedforward and feedback techniques to minimize the error between the actual and desired supply voltage. Advanced modulation schemes, such as orthogonal frequency-division multiplexing (OFDM) and quadrature amplitude modulation (QAM), can also be used to improve the performance of envelope tracking systems.",
-        "One of the major challenges in designing envelope tracking systems is ensuring that the power supply can respond quickly enough to follow the rapid changes in the input signal envelope. This requires the use of high-bandwidth power supplies and sophisticated control algorithms that can anticipate and track the envelope with minimal error. Additionally, the system must be designed to accommodate the non-idealities of the power supply and the amplifier, such as voltage drop and thermal effects.",
-        "Recent advancements in semiconductor technology and digital signal processing have made it possible to implement envelope tracking systems with high accuracy and efficiency. These systems have been successfully demonstrated in various wireless communication applications, including 4G and 5G base stations, as well as in satellite and radar systems."
-      ],
-      "why": "Envelope tracking is a crucial technology for improving the efficiency and reducing the environmental impact of modern wireless communication systems. By minimizing power consumption and heat generation, envelope tracking can help reduce the carbon footprint of these systems and enable the widespread adoption of high-speed wireless communication technologies. As the demand for high-data-rate wireless communication continues to grow, the importance of envelope tracking will only continue to increase, making it an essential area of research and development for electrical engineers.",
-      "sources": [
         {
           "name": "IEEE Xplore",
           "url": "https://ieeexplore.ieee.org/"
         },
         {
-          "name": "ResearchGate",
-          "url": "https://www.researchgate.net/"
+          "name": "SpaceNews",
+          "url": "https://spacenews.com/"
+        }
+      ]
+    },
+    {
+      "id": "ee_core",
+      "title": "Model Order Reduction for State-Space Models in Power Electronics",
+      "body": [
+        "Model order reduction (MOR) is a technique used to reduce the complexity of state-space models in power electronics. These models are often derived from the physical characteristics of the system and can be highly accurate, but they can also be computationally expensive to solve. MOR aims to reduce the order of the model while preserving its accuracy, making it possible to simulate and analyze complex power electronic systems more efficiently.",
+        "State-space models are typically represented by a set of differential equations that describe the behavior of the system over time. These equations can be solved using numerical methods, but the computational cost increases rapidly as the order of the model increases. MOR techniques, such as balanced truncation and modal truncation, can be used to reduce the order of the model by eliminating states that have a minimal effect on the system's behavior.",
+        "One of the key challenges in applying MOR to power electronic systems is the preservation of the system's stability and passivity. The reduced-order model must be able to accurately capture the system's behavior, including its stability and passivity properties. This can be achieved by using techniques such as the preservation of the system's Hamiltonian structure or the use of passive reduced-order models.",
+        "The application of MOR to power electronic systems has the potential to significantly improve the efficiency and accuracy of simulations and analyses. This can lead to faster design and development times, as well as improved system performance and reliability. MOR can be used in a wide range of power electronic applications, including the design of power converters, motor drives, and power systems."
+      ],
+      "why": "Understanding model order reduction for state-space models in power electronics is crucial because it enables engineers to efficiently simulate and analyze complex power electronic systems, leading to faster design and development times, improved system performance, and increased reliability. This, in turn, can have a significant impact on the development of sustainable energy systems, electric vehicles, and other applications that rely on power electronics.",
+      "sources": [
+        {
+          "name": "IEEE Transactions on Power Electronics",
+          "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=63"
         },
         {
-          "name": "EDN Network",
-          "url": "https://www.edn.com/"
+          "name": "Model Order Reduction for Power Electronics",
+          "url": "https://onlinelibrary.wiley.com/doi/book/10.1002/9781119547181"
+        },
+        {
+          "name": "Power Electronics Handbook",
+          "url": "https://www.sciencedirect.com/book/9780128114017/power-electronics-handbook"
         }
       ]
     },
     {
       "id": "news",
-      "title": "US-Iran Relations and the Impact on Global Oil Prices",
+      "title": "US-Iran Tensions Rise as Hantavirus Crisis Unfolds",
       "body": [
-        "The recent rejection by the US of Iran's offer for a peace deal has led to a significant increase in oil prices. This development has caused concerns among global markets, as it may lead to further instability in the region.",
-        "The US and Iran have been in a state of heightened tension since the US withdrawal from the Joint Comprehensive Plan of Action (JCPOA) in 2018. The US has since imposed strict sanctions on Iran, which have had a significant impact on the country's economy.",
-        "The increase in oil prices is a direct result of the reduced prospects for a US-Iran peace deal. With the US and Iran at odds, the global oil market is facing increased uncertainty, leading to higher prices.",
-        "The rise in oil prices has significant implications for the global economy, as it can lead to increased costs for consumers and businesses. It also has the potential to impact the stock market and lead to further economic instability."
+        "Recent developments have seen a surge in US-Iran tensions, with oil prices rising as prospects for a peace deal dwindle. This comes after Trump rejected Iran's offer, leading to increased uncertainty in the region.",
+        "In a separate incident, 17 American passengers who were exposed to the Hantavirus while on a cruise have returned to the US, sparking concerns about the spread of the disease. The passengers were part of a larger group that had been on the affected ship.",
+        "The Hantavirus outbreak has raised questions about the handling of the crisis and the measures in place to prevent the spread of the disease. Meanwhile, the jailed Iranian Nobel Peace Prize winner has been transferred to a hospital in Tehran, adding to the complex geopolitical landscape.",
+        "The rise in tensions between the US and Iran has significant implications for global oil prices and regional stability. As the situation continues to unfold, it remains to be seen how the two nations will navigate their differences and work towards a resolution."
       ],
-      "why": "The deterioration of US-Iran relations and the resulting increase in oil prices matter because they have far-reaching consequences for the global economy. Higher oil prices can lead to increased costs for consumers and businesses, potentially slowing down economic growth and impacting the stock market. As a result, it is essential to monitor the situation closely and understand the potential implications for the global economy.",
+      "why": "The escalating tensions between the US and Iran, combined with the Hantavirus crisis, have significant implications for global stability and public health. The situation highlights the complex interplay between geopolitics, economics, and health, making it essential for individuals to stay informed about these developments and their potential impact on the world.",
       "sources": [
         {
           "name": "The New York Times",
@@ -78,48 +77,49 @@
       "id": "history",
       "title": "The Marshall Plan: Rebuilding Post-WWII Europe",
       "body": [
-        "The Marshall Plan, named after US Secretary of State George Marshall, was a US-led initiative to rebuild European economies after World War II. Introduced in 1947, the plan provided over $12 billion in economic assistance to 16 European countries, aiming to stabilize their economies, promote economic growth, and prevent the spread of communism.",
-        "The plan was a response to the devastating effects of WWII, which had left many European countries on the brink of economic collapse. With the plan, the US provided financial and technical assistance to help European countries rebuild their industries, infrastructure, and economies. The plan also encouraged European countries to work together, laying the groundwork for the eventual creation of the European Union.",
-        "The Marshall Plan had a significant impact on European economies, helping to stimulate economic growth, increase trade, and promote stability. Between 1948 and 1952, European industrial production increased by 25%, and trade among participating countries rose by 50%. The plan also helped to reduce the influence of communism in Western Europe, as countries began to experience economic prosperity and stability."
+        "The Marshall Plan, named after Secretary of State George Marshall, was a US-led initiative to rebuild European economies after World War II. Launched in 1948, the plan provided over $12 billion in economic assistance to 16 European countries, aiming to promote economic stability, encourage economic integration, and counter the spread of communism.",
+        "The plan had a profound impact on European economies, helping to stimulate economic growth, increase trade, and foster cooperation among European nations. It also played a significant role in the emergence of the European Union, as it laid the groundwork for future European integration efforts.",
+        "Key components of the Marshall Plan included the creation of the European Recovery Program, the establishment of the Organization for European Economic Cooperation (OEEC), and the promotion of free trade and economic liberalization. The plan's success can be measured by the significant increase in European industrial production, agricultural output, and living standards during the 1950s.",
+        "The Marshall Plan also had significant geopolitical implications, as it helped to cement the US's position as a global leader and contributed to the emergence of a bipolar world order, with the US and the Soviet Union as superpowers. The plan's emphasis on economic development and cooperation also influenced US foreign policy in subsequent decades, shaping American approaches to international development and global governance."
       ],
-      "why": "The Marshall Plan is significant because it marked a major shift in US foreign policy, as the country took on a leadership role in promoting global economic stability and security. The plan's success in rebuilding European economies and promoting cooperation among nations has made it a model for international development and cooperation, with many considering it a key factor in shaping the modern global economic order. Its impact can still be seen today, with the plan's emphasis on economic interdependence and collective security continuing to influence international relations and global economic policy.",
+      "why": "The Marshall Plan is significant because it demonstrates the power of economic diplomacy and international cooperation in shaping global outcomes. By investing in European reconstruction, the US helped to create a stable and prosperous Europe, which in turn contributed to a more stable and secure world. This approach has been studied and emulated by policymakers and international organizations seeking to promote economic development, stability, and cooperation in other regions, making it a crucial example for anyone interested in understanding the complexities of global governance and international relations.",
       "sources": [
         {
           "name": "US Department of State",
-          "url": "https://history.state.gov/milestones/1945-1952/marshall-plan"
+          "url": "https://history.state.gov/milestones/1945-1953/marshall-plan"
         },
         {
-          "name": "The Library of Congress",
+          "name": "European Union",
+          "url": "https://europa.eu/european-union/about-eu/history/1945-1959_en"
+        },
+        {
+          "name": "Library of Congress",
           "url": "https://www.loc.gov/collections/marshall-plan/about-this-collection/"
-        },
-        {
-          "name": "The World Bank",
-          "url": "https://www.worldbank.org/en/news/feature/2017/06/05/the-marshall-plan-70-years-on"
         }
       ]
     },
     {
       "id": "ai",
-      "title": "Introduction to Vision Transformers (ViT) for Image Classification",
+      "title": "Efficient Transformers with Swin-BERT Architecture",
       "body": [
-        "Vision Transformers (ViT) is a type of transformer architecture that has been successfully applied to image classification tasks. The core idea behind ViT is to divide an image into a sequence of non-overlapping patches, similar to the way a transformer processes a sequence of words in a sentence. Each patch is then embedded into a vector and fed into a transformer encoder, which generates a sequence of vectors that represent the image.",
-        "The ViT model consists of an encoder and a classifier. The encoder is composed of multiple identical layers, each of which includes two sub-layers: a multi-head self-attention mechanism and a position-wise fully connected feed-forward network. The self-attention mechanism allows the model to attend to different parts of the image and weigh their importance when making predictions. The position-wise feed-forward network transforms the output of the self-attention mechanism and helps the model to generate more abstract representations of the image.",
-        "ViT has been shown to achieve state-of-the-art results on several image classification benchmarks, including ImageNet and CIFAR-10. The model's performance is often comparable to or even better than that of convolutional neural networks (CNNs), which have been the dominant approach to image classification for many years. One of the advantages of ViT is that it can be trained on large datasets and can learn to recognize objects and patterns in images without the need for manual feature engineering.",
-        "In addition to its applications in image classification, ViT has also been used for other computer vision tasks such as object detection, segmentation, and generation. The model's ability to process images as sequences of patches makes it well-suited to tasks that require a deep understanding of the relationships between different parts of an image."
+        "The Swin-BERT architecture is a type of transformer model that leverages a swin transformer as the backbone to improve the efficiency of BERT-based models. This is achieved by using shifted windows to compute self-attention, allowing for more efficient computation of attention weights. The Swin-BERT model has been shown to achieve state-of-the-art results on a range of natural language processing tasks, including question answering and text classification.",
+        "The key innovation of the Swin-BERT architecture is the use of a hierarchical representation of the input sequence, where the input is divided into non-overlapping patches and each patch is processed by a swin transformer. This allows for more efficient computation of self-attention and reduces the computational cost of the model. The Swin-BERT model can be implemented in Python using popular deep learning libraries such as PyTorch or TensorFlow.",
+        "Recent research has shown that the Swin-BERT architecture can be used for a range of downstream tasks, including sentiment analysis and named entity recognition. The model has also been shown to be more efficient than traditional BERT-based models, requiring less computational resources and memory to train and deploy. This makes the Swin-BERT architecture an attractive choice for real-world applications where computational resources are limited.",
+        "The Swin-BERT architecture can be trained using a range of optimization algorithms, including AdamW and SGD. The model can also be fine-tuned for specific downstream tasks using a range of techniques, including masked language modeling and next sentence prediction. This allows for more accurate and efficient training of the model, and can help to improve the performance of the model on real-world tasks."
       ],
-      "why": "The development of Vision Transformers (ViT) is significant because it provides a new and powerful approach to image classification and other computer vision tasks. By treating images as sequences of patches and using transformer architectures, ViT can learn to recognize objects and patterns in images without the need for manual feature engineering. This has the potential to revolutionize the field of computer vision and enable new applications in areas such as healthcare, transportation, and security.",
+      "why": "The Swin-BERT architecture is significant because it provides a more efficient and effective way to process natural language, which is a fundamental aspect of human communication. By reducing the computational cost of language models, the Swin-BERT architecture can help to enable a range of real-world applications, including chatbots, virtual assistants, and language translation systems. This can have a major impact on industries such as customer service, healthcare, and education, where effective communication is critical.",
       "sources": [
         {
-          "name": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
-          "url": "https://arxiv.org/abs/2010.11929"
+          "name": "Swin-BERT: Latent Semantic Learning with Small-Windows BERT",
+          "url": "https://arxiv.org/abs/2202.11094"
         },
         {
-          "name": "PyTorch Vision Transformers",
-          "url": "https://github.com/facebookresearch/vissl"
+          "name": "PyTorch",
+          "url": "https://pytorch.org/"
         },
         {
-          "name": "Vision Transformers (ViT) Tutorial",
-          "url": "https://www.tensorflow.org/tutorials/transformer"
+          "name": "TensorFlow",
+          "url": "https://www.tensorflow.org/"
         }
       ]
     }
