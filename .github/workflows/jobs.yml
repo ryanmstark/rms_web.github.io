@@ -40,5 +40,5 @@ jobs:
           git add jobs/index.html
           git add _scripts/jobs/seen_companies.json
           git diff --staged --quiet || git commit -m "Update job research"
-          git pull --rebase
+          git pull --rebase -X theirs
           git push

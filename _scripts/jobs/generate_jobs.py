@@ -201,6 +201,8 @@ Candidate profile:
 - Prefers to move away from aerospace/space industry
 - NOT interested in: power electronics, power systems, antenna design
 
+IMPORTANT: Only mark a posting relevant if it is a hands-on individual contributor engineering role. Immediately mark irrelevant: Product Manager, Program Manager, Engineering Manager, Director, VP, Sales Engineer, or any role without direct technical/design work.
+
 Review these {len(jobs)} postings. Return ONLY a valid JSON array with one object per posting.
 
 For irrelevant: {{"idx": N, "relevant": false}}
@@ -381,9 +383,10 @@ function cardHtml(job) {
     ? `<span class="startup-badge">Startup</span>`
     : '';
 
-  const reqList = (job.top_requirements || []).length
+  const reqs = job.top_requirements || job.key_skills || [];
+  const reqList = reqs.length
     ? `<div class="skills-label">What You'd Need to Know</div>
-       <ol class="req-list">${job.top_requirements.map(r => `<li>${r}</li>`).join('')}</ol>`
+       <ol class="req-list">${reqs.map(r => `<li>${r}</li>`).join('')}</ol>`
     : '';
 
   const bonusPills = (job.bonus_skills || []).length
