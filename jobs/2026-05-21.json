@@ -6,42 +6,42 @@
       "company": "General Motors",
       "location_label": "San Francisco Bay Area",
       "region": "sf",
-      "url": "https://www.adzuna.com/land/ad/5730842726?se=FjA5EeFU8RGWd5mAHgw5QA&utm_medium=api&utm_source=9349c45d&v=E401466C67D3CF2CCCDC83DF217127895B67C438",
+      "url": "https://www.adzuna.com/land/ad/5730842726?se=3GOgCeJU8RG9I4lbySjo0A&utm_medium=api&utm_source=9349c45d&v=E401466C67D3CF2CCCDC83DF217127895B67C438",
       "pay_range": "$237,917\u2013$237,917/yr",
       "top_requirements": [
-        "Hands-on experience designing and validating connectivity modules for automotive applications",
-        "Proficiency in hardware design and development for wireless communications systems",
-        "Experience with system-level testing and validation of connectivity modules"
+        "Hands-on experience designing and developing connectivity modules for automotive applications",
+        "Proficiency in hardware design and validation of wireless communication systems",
+        "Experience with system-level design and integration of connectivity solutions"
       ],
       "bonus_skills": [
         "Automotive industry experience",
-        "Wireless communications protocols",
-        "System-level testing"
+        "Wireless communication protocols",
+        "System-level design"
       ],
       "summary": "This role involves designing and developing connectivity modules for automotive applications, which aligns with the candidate's experience in communications systems design and test. The candidate's background in RF systems and signal processing would be valuable in this position.",
       "is_startup": false,
       "adzuna_id": "5730842726"
     },
     {
-      "title": "Wireless RF Compliance Validation Engineer (RSE)",
+      "title": "Systems Software Engineer, Wireless Technologies & Ecosystems",
       "company": "Apple",
       "location_label": "San Francisco Bay Area",
       "region": "sf",
-      "url": "https://www.adzuna.com/details/5729009218?utm_medium=api&utm_source=9349c45d",
-      "pay_range": "$110,422\u2013$110,422/yr",
+      "url": "https://www.adzuna.com/details/5729084388?utm_medium=api&utm_source=9349c45d",
+      "pay_range": "$161,114\u2013$161,114/yr",
       "top_requirements": [
-        "Hands-on experience with RF regulatory compliance testing and validation",
-        "Proficiency in RF systems analysis and design",
-        "Experience with wireless communications protocols and standards"
+        "Experience with system-level design and integration of wireless technologies",
+        "Proficiency in developing core wireless technologies, such as Wi-Fi 7 and Bluetooth 6",
+        "Hands-on experience with wireless system design and development for consumer products"
       ],
       "bonus_skills": [
-        "RF testing and measurement",
-        "Wireless communications protocols",
-        "Compliance testing"
+        "Wireless communication protocols",
+        "System-level design",
+        "Consumer product development"
       ],
-      "summary": "This role involves performing RF regulatory compliance testing and validation, which aligns with the candidate's experience in RF systems and signal processing. The candidate's background in communications systems design and test would be valuable in this position.",
+      "summary": "This role involves developing core wireless technologies for consumer products, which aligns with the candidate's experience in communications systems design and test. The candidate's background in RF systems and signal processing would be valuable in this position.",
       "is_startup": false,
-      "adzuna_id": "5729009218"
+      "adzuna_id": "5729084388"
     },
     {
       "title": "RF / Wireless Systems Engineer",
@@ -51,16 +51,16 @@
       "url": "https://www.adzuna.com/details/5691595978?utm_medium=api&utm_source=9349c45d",
       "pay_range": "$160,000\u2013$240,000/yr",
       "top_requirements": [
-        "Hands-on experience designing and developing RF and wireless systems",
-        "Proficiency in RF systems analysis and design",
-        "Experience with signal processing and algorithm development for wireless systems"
+        "Experience with RF system design and development for wireless communication systems",
+        "Proficiency in signal processing and analysis for wireless systems",
+        "Hands-on experience with system-level design and integration of RF systems"
       ],
       "bonus_skills": [
-        "RF systems design",
+        "RF system design",
         "Signal processing",
-        "Algorithm development"
+        "System-level design"
       ],
-      "summary": "This role involves designing and developing RF and wireless systems, which aligns with the candidate's experience in communications systems design and test. The candidate's background in RF systems and signal processing would be valuable in this position.",
+      "summary": "This role involves designing and developing RF systems for wireless communication systems, which aligns with the candidate's experience in communications systems design and test. The candidate's background in RF systems and signal processing would be valuable in this position.",
       "is_startup": true,
       "adzuna_id": "5691595978"
     },
@@ -72,16 +72,16 @@
       "url": "https://www.adzuna.com/details/5608727347?utm_medium=api&utm_source=9349c45d",
       "pay_range": "$124,600\u2013$231,400/yr",
       "top_requirements": [
-        "Hands-on experience designing and developing embedded software for IoT and wireless applications",
-        "Proficiency in programming languages such as C and C++",
-        "Experience with system-level testing and validation of embedded software"
+        "Experience with embedded software development for IoT wireless applications",
+        "Proficiency in low-power wireless connectivity and device development",
+        "Hands-on experience with system-level design and integration of IoT devices"
       ],
       "bonus_skills": [
         "Embedded software development",
-        "IoT and wireless applications",
-        "System-level testing"
+        "Low-power wireless connectivity",
+        "IoT device development"
       ],
-      "summary": "This role involves designing and developing embedded software for IoT and wireless applications, which aligns with the candidate's experience in communications systems design and test. The candidate's background in RF systems and signal processing would be valuable in this position.",
+      "summary": "This role involves developing embedded software for IoT wireless applications, which aligns with the candidate's experience in communications systems design and test. The candidate's background in RF systems and signal processing would be valuable in this position.",
       "is_startup": false,
       "adzuna_id": "5608727347"
     }
